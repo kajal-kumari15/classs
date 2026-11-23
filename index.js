@@ -1,19 +1,28 @@
 let count = 0;
 const greeting = document.getElementById("greeting");
 const counter = document.getElementById("counter");
+const msgBtn = document.getElementById("msgBtn");
+const countBtn = document.getElementById("countBtn");
+const themeBtn = document.getElementById("themeBtn");
 
-document.getElementById("msgBtn").addEventListener("click", () => {
-  greeting.textContent =
-    greeting.textContent === "Namaste!"
-      ? "Swagat Hai!"
-      : "Namaste!";
-});
+if (msgBtn && greeting) {
+  msgBtn.addEventListener("click", () => {
+    greeting.textContent =
+      greeting.textContent === "Namaste!"
+        ? "Swagat Hai!"
+        : "Namaste!";
+  });
+}
 
-document.getElementById("countBtn").addEventListener("click", () => {
-  count += 1;
-  counter.textContent = `Clicks: ${count}`;
-});
+if (countBtn && counter) {
+  countBtn.addEventListener("click", () => {
+    count += 1;
+    counter.textContent = `Clicks: ${count}`;
+  });
+}
 
-document.getElementById("themeBtn").addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-});
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
+}
